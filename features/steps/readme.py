@@ -12,14 +12,10 @@ def step_impl(context):
     with file(context.fn) as f:
         fields = [line.strip('* \n') for line in f.readlines()
                   if line.startswith('* ')]
-    context.fields = dict(f.split(':') for f in fields)
+    context.fields = dict(f.split(':')[:2] for f in fields)
 
 
 @then("we see the student's {key}")
-def step_impl(context, key):
-    pass
-
-
 @then("the student's {key}")
 def step_impl(context, key):
     d = context.fields
