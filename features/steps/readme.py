@@ -29,7 +29,6 @@ def step_impl(context):
     assert 'Peter Parente' != d['Name'].strip()
     assert 'parente@cs.unc.edu' != d['Email'].strip()
     assert 'parente' != d['GitHub Username'].strip()
-    assert 'peter_parente' != d['BitBucket Username'].strip()
 
 @then('we find the {field} on {site}')
 def step_impl(context, field, site):
